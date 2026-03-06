@@ -99,6 +99,7 @@ app/
     transactions/   # list, stream, [id]/flag, [id]/note
   auth/login/
   dashboard/
+    home/
     transactions/
 lib/
   auth-config.ts
@@ -116,5 +117,5 @@ components/
   dashboard/
     transactions-table.tsx
     transaction-detail-panel.tsx
-middleware.ts
+proxy.ts # middleware
 ```
