@@ -6,6 +6,7 @@ interface ApiErrorShape {
   errors?: Record<string, string[]> | string[];
 }
 import { clsx, type ClassValue } from "clsx";
+import { format } from "date-fns";
 import { toast } from "sonner";
 import { twMerge } from "tailwind-merge";
 
@@ -49,7 +50,7 @@ export const currencyFormatter = (
   amount: number | string = 0,
   currency: string = "NGN",
   options?: Omit<Intl.NumberFormatOptions, "style" | "currency">,
-  locale: Intl.LocalesArgument = "en-NG",
+  locale: Intl.LocalesArgument = "en-US",
 ): string => {
   const parsedAmount =
     typeof amount === "string" ? parseFloat(amount?.replace(/,/g, "")) : amount;
@@ -600,6 +601,11 @@ export function formatDate(dateStr: string | number | Date): string {
     day: "2-digit",
     year: "numeric",
   }).format(date);
+}
+
+export function formatDateTime(dateStr: string | number | Date): string {
+  const date = new Date(dateStr);
+  return format(date, "EEE, MMM d, yyyy • h:mma");
 }
 
 export const formatText = (text: string) => {

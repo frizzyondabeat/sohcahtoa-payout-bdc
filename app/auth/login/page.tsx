@@ -52,15 +52,18 @@ function LoginForm() {
 
   return (
     <div className="flex min-h-dvh flex-col items-center justify-center bg-muted/30 px-4">
-      <div className="w-full max-w-md space-y-8">
+      <div className="w-full max-w-md space-y-2">
         <div className="flex flex-col items-center gap-4">
-          <Link href="/" className="focus:outline-none focus:ring-2 focus:ring-ring">
-            <SohcahtoaLogo className="h-10" />
+          <Link
+            href="/"
+            className="focus:outline-none focus:ring-2 focus:ring-ring"
+          >
+            <SohcahtoaLogo className="h-20 w-full" />
           </Link>
-          <h1 className="text-center text-2xl font-semibold text-foreground">
-            Sign in to SohCahToa Payout
-          </h1>
         </div>
+        <h1 className="text-center text-2xl font-semibold text-foreground">
+          Sign in
+        </h1>
 
         <form
           onSubmit={handleSubmit}
@@ -76,7 +79,10 @@ function LoginForm() {
           )}
 
           <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-medium text-foreground">
+            <label
+              htmlFor="email"
+              className="text-sm font-medium text-foreground"
+            >
               Email
             </label>
             <Input
@@ -93,7 +99,10 @@ function LoginForm() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="password" className="text-sm font-medium text-foreground">
+            <label
+              htmlFor="password"
+              className="text-sm font-medium text-foreground"
+            >
               Password
             </label>
             <Input
@@ -110,11 +119,13 @@ function LoginForm() {
           </div>
 
           <p className="text-xs text-muted-foreground">
-            Demo: use any email + password <code className="rounded bg-muted px-1">password123</code>. Admin: admin@sohcahtoa.com
+            Demo: use any email + password{" "}
+            <code className="rounded bg-muted px-1">password123</code>. Admin:
+            admin@sohcahtoa.com
           </p>
 
           <Button type="submit" className="w-full" disabled={isLoading}>
-            {isLoading ? 'Signing in...' : 'Sign in'}
+            {isLoading ? "Signing in..." : "Sign in"}
           </Button>
         </form>
 
